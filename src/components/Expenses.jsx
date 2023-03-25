@@ -1,3 +1,4 @@
+import Container from "./base/Container";
 import Expensesitems from "./Expensesitems";
 
 export default function Expenses(props) {
@@ -9,11 +10,5 @@ export default function Expenses(props) {
     />
   ));
 
-  return (
-    <div
-      className={`p-4 bg-gray-900 w-[50rem] my-8 m-auto max-w-[95%] rounded-2xl`}
-    >
-      {expensesList}
-    </div>
-  );
+  return <Container data={expensesList} />;
 }
