@@ -1,9 +1,9 @@
 import moment from "moment";
 
 export default function ExpensesDate(props) {
-  const day = moment(props.date).local().format("D");
-  const month = moment(props.date).local().format("MMM");
-  const year = moment(props.date).local().format("yyyy");
+  const day = moment(props.date).format("D");
+  const month = moment(props.date).format("MMM");
+  const year = moment(props.date).format("yyyy");
 
   return (
     <div
