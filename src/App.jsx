@@ -1,8 +1,5 @@
-import moment from "moment";
-import { useState } from "react";
+import Form from "./components/base/Form";
 import Expenses from "./components/Expenses";
-
-import Expensesitems from "./components/Expensesitems";
 
 function App() {
   const expenses = [
@@ -29,6 +26,7 @@ function App() {
 
   return (
     <div>
+      <Form />
       <Expenses data={expenses} />
     </div>
   );
