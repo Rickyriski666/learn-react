@@ -2,10 +2,33 @@ import { useState } from "react";
 import Container from "./Container";
 
 export default function Form() {
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
+
+  const titleHandler = (event) => setEnteredTitle(event.target.value);
+  const amountHandler = (event) => setEnteredAmount(event.target.value);
+  const dateHandler = (event) => setEnteredDate(event.target.value);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: enteredDate,
+    };
+
+    console.log(expenseData);
+  };
   return (
     <div>
       <Container className={"text-white"}>
-        <form action="" className="px-5 py-4 bg-slate-800 rounded-2xl">
+        <form
+          onSubmit={submitHandler}
+          action=""
+          className="px-5 py-4 bg-slate-800 rounded-2xl"
+        >
           <div className={"mx-auto mb-4"}>
             <label
               htmlFor=""
@@ -15,6 +38,7 @@ export default function Form() {
             </label>
             <input
               type="text"
+              onChange={titleHandler}
               className="w-full mb-3 py-1 px-2 appearance-none rounded-lg text-gray-700 shadow-white"
             />
 
@@ -26,6 +50,7 @@ export default function Form() {
             </label>
             <input
               type="number"
+              onChange={amountHandler}
               className="w-full mb-3 py-1 px-2 appearance-none rounded-lg text-gray-700 shadow-white"
             />
 
@@ -37,12 +62,16 @@ export default function Form() {
             </label>
             <input
               type="date"
+              onChange={dateHandler}
               className="w-full mb-3 py-1 px-2 appearance-none rounded-lg text-gray-700 shadow-white"
             />
           </div>
 
           <div className="flex justify-end">
-            <button className=" text-white bg-purple-900 rounded-2xl p-2">
+            <button
+              type="submit"
+              className=" text-white bg-purple-900 rounded-2xl p-2"
+            >
               Add Expense
             </button>
           </div>
