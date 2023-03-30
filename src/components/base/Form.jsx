@@ -20,6 +20,9 @@ export default function Form() {
     };
 
     console.log(expenseData);
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
   };
   return (
     <div>
@@ -38,6 +41,7 @@ export default function Form() {
             </label>
             <input
               type="text"
+              value={enteredTitle}
               onChange={titleHandler}
               className="w-full mb-3 py-1 px-2 appearance-none rounded-lg text-gray-700 shadow-white"
             />
@@ -50,6 +54,7 @@ export default function Form() {
             </label>
             <input
               type="number"
+              value={enteredAmount}
               onChange={amountHandler}
               className="w-full mb-3 py-1 px-2 appearance-none rounded-lg text-gray-700 shadow-white"
             />
@@ -62,6 +67,7 @@ export default function Form() {
             </label>
             <input
               type="date"
+              value={enteredDate}
               onChange={dateHandler}
               className="w-full mb-3 py-1 px-2 appearance-none rounded-lg text-gray-700 shadow-white"
             />
