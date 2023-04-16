@@ -1,5 +1,3 @@
-import { Children } from "react";
-
 export default function Container(props) {
   const { data, children, className } = props;
   return (

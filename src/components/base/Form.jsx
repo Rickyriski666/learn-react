@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Container from "./Container";
 
-export default function Form() {
+export default function Form(props) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -19,11 +19,12 @@ export default function Form() {
       date: enteredDate,
     };
 
-    console.log(expenseData);
+    props.inputData(expenseData);
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
   };
+
   return (
     <div>
       <Container className={"text-white"}>
