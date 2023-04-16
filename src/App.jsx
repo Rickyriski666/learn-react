@@ -1,8 +1,9 @@
+import { useState } from "react";
 import Form from "./components/base/Form";
 import Expenses from "./components/Expenses";
 
 function App() {
-  const expenses = [
+  const dataExpenses = [
     {
       id: 1,
       title: "Toilet Paper",
@@ -24,14 +25,16 @@ function App() {
     },
   ];
 
+  const [expenses, setExpenses] = useState(dataExpenses);
+
   function inputHandler(dataOnForm) {
     const dataFromForm = {
       id: expenses.length + 1,
       ...dataOnForm,
     };
-    console.log(dataFromForm);
-    expenses.push(dataFromForm);
-    console.log(expenses);
+    setExpenses((prevData) => {
+      return [dataFromForm, ...prevData];
+    });
   }
 
   return (
