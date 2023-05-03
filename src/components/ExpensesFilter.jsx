@@ -11,6 +11,7 @@ export default function ExpenseFilter(props) {
           onChange={dropdownHandler}
           className="font-bold px-12 py-2 rounded-md text-black"
         >
+          <option value="2023">2023</option>
           <option value="2022">2022</option>
           <option value="2021">2021</option>
           <option value="2020">2020</option>

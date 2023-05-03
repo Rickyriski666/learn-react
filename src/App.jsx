@@ -28,6 +28,7 @@ function App() {
   const [expenses, setExpenses] = useState(dataExpenses);
 
   function inputHandler(dataOnForm) {
+    console.log(dataOnForm); //data dari form input
     const dataFromForm = {
       id: expenses.length + 1,
       ...dataOnForm,
@@ -35,6 +36,8 @@ function App() {
     setExpenses((prevData) => {
       return [dataFromForm, ...prevData];
     });
+
+    console.log(dataFromForm);
   }
 
   return (
