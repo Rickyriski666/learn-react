@@ -3,6 +3,7 @@ import Container from "./base/Container";
 import ExpenseFilter from "./ExpensesFilter";
 import Expensesitems from "./Expensesitems";
 import moment from "moment";
+import NotFound from "./base/NotFound";
 
 export default function Expenses(props) {
   const [selectedYear, setSelectedYear] = useState("2023");
@@ -22,6 +23,7 @@ export default function Expenses(props) {
         date={expense.date}
         title={expense.title}
         amount={expense.amount}
+        data={expense}
       />
     );
   });
@@ -30,7 +32,7 @@ export default function Expenses(props) {
     <div>
       <Container>
         <ExpenseFilter selected={filterHandler} />
-        {itemsList}
+        {itemsList.length === 0 ? <NotFound /> : itemsList}
       </Container>
     </div>
   );

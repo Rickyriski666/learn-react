@@ -36,8 +36,6 @@ function App() {
     setExpenses((prevData) => {
       return [dataFromForm, ...prevData];
     });
-
-    console.log(dataFromForm);
   }
 
   return (
