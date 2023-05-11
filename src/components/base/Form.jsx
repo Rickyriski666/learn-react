@@ -20,6 +20,7 @@ export default function Form(props) {
     };
 
     props.inputData(expenseData);
+    props.addExpense(false);
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
